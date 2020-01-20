@@ -1,17 +1,37 @@
 //Imprt React and react-dom libraries
 import React from 'react';
 import ReactDOM from 'react-dom';
+import faker from 'faker';
+import CommentDetail from './CommentDetail';
+import ApprovalCard from './ApprovalCard';
 
 
 //create react component
 const App = () => {
-    const buttonText = { text: "Click Me" };
-    const labelText = 'Enter Name: '
+
     return (
-    <div>
-        <label className="label" htmlFor="name">{labelText}</label>
-        <input style={{border: '2px solid black'}} id="name" type="text" />
-        <button style={{backgroundColor: 'blue', color: 'white', marginLeft: '5px'}}>{buttonText.text}</button>
+    <div className="ui container comments">
+        <ApprovalCard>
+            <CommentDetail
+                imgSrc={faker.image.avatar()}
+                author={faker.name.firstName()}
+                date={faker.date.month()}
+                text={faker.lorem.sentence()}/>
+        </ApprovalCard>
+        <ApprovalCard>
+            <CommentDetail
+                imgSrc={faker.image.avatar()}
+                author={faker.name.firstName()}
+                date={faker.date.month()}
+                text={faker.lorem.sentence()}/>
+        </ApprovalCard>
+        <ApprovalCard>
+            <CommentDetail
+                imgSrc={faker.image.avatar()}
+                author={faker.name.firstName()}
+                date={faker.date.month()}
+                text={faker.lorem.sentence()}/>
+        </ApprovalCard>
     </div>
     );
 }
